@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.edit) EditText editText;
     @BindView(R.id.miasto) TextView miasto;
     //@BindView(R.id.recyclerView) RecyclerView recyclerView;
-    @Nullable
+
     @OnClick( R.id.btn)
 
     public void click (Button btn) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    @Nullable
+
     @OnClick(R.id.btn1)
     public void click2(Button btn1){
         Intent intent = new Intent(MainActivity.this, okno2.class);

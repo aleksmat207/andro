@@ -24,7 +24,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(PlaceAdapter.ViewHolder holder, int position) {
-  
+
     }
 
     @Override
@@ -36,5 +36,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
         }
+
     }
 }
