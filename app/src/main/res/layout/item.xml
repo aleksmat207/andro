@@ -12,7 +12,18 @@
         android:id="@+id/nazwaMiejsca"/>
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/temp"/>
+    <TextView
+        android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/info"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/placeSelect"
+        android:text="@string/choose"/>
 </LinearLayout>

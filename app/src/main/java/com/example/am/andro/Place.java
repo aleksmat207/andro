@@ -9,6 +9,7 @@ public class Place {
     public int temperature;
     public String information;
 
+
     public Place(String placeName, int temperature, String information) {
         this.placeName = placeName;
         this.temperature = temperature;
@@ -39,6 +40,9 @@ public class Place {
     public void setInformation(String information) {
         this.information = information;
     }
+
+
+
 }
 
 
