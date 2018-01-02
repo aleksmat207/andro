@@ -21,10 +21,10 @@ public class okno2 extends AppCompatActivity {
         setContentView(R.layout.activity_okno2);
         ButterKnife.bind(this);
         ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place("Gliwice",11, ""));
-        places.add(new Place("Częstochowa",15, ""));
-        places.add(new Place("Warszawa",9, ""));
-        places.add(new Place("Poznań",13, ""));
+        places.add(new Place("Gliwice",11, "Możliwe przelotne opady deszczu"));
+        places.add(new Place("Lublin",15, "Duże zachmurzenie"));
+        places.add(new Place("Wrocław",9, "Słonecznie"));
+        places.add(new Place("Poznań",13, "Lekkie zachmurzenie"));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 

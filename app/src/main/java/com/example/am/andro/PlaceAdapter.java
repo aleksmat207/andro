@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -29,6 +31,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
     @Override
     public PlaceAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View itemLayoutView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item, null);
         return new ViewHolder(itemLayoutView);
@@ -36,7 +39,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(PlaceAdapter.ViewHolder holder, int position) {
-        holder.setPlaceName(places.get(position).getPlaceName());
+        holder.setPlaceName(places.get(position).getPlaceName()+ "");
         holder.setTemperature(places.get(position).getTemperature() + "");
         holder.setInformation(places.get(position).getInformation() + "");
     }
@@ -47,6 +50,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public String newCity;
+
         @BindView(R.id.info)
         TextView placeInfo;
 
@@ -55,16 +60,21 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
         @BindView(R.id.temp)
         TextView temperature;
-        @BindView(R.id.miasto) TextView city;
+        @BindView(R.id.placeSelect)
+        TextView ci;
+
 
         @OnClick(R.id.placeSelect)
-        void selectPlace() {
 
-            openAlertDialog();
-        }
+        public void clickCity (TextView ci){ Intent intent = new Intent();
+
+
+}
         public ViewHolder(View itemView) {
             super(itemView);
+
             ButterKnife.bind(this, itemView);
+            ButterKnife.bind(MainActivity.class, itemView);
         }
 
 
@@ -81,18 +91,17 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
         }
         private void openAlertDialog() {
             AlertDialog.Builder builder;
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                builder = new AlertDialog.Builder(itemView.getContext(), android.R.style.Theme_Material_Dialog_Alert);
-//            } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(itemView.getContext(), android.R.style.Theme_Material_Dialog_Alert);
+            } else {
                 builder = new AlertDialog.Builder(itemView.getContext());
-
+            }
             builder.setTitle(itemView.getContext().getString(R.string.alert_title))
                     .setMessage(itemView.getContext().getString(R.string.alert_dialog))
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             // continue
-//                            Intent intent = new Intent();
-//city.setText(placeName.toString());
+
 
                         }
                     })
@@ -104,5 +113,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
         }
+
     }
 }
